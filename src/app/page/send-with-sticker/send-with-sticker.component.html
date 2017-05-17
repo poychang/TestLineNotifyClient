@@ -21,7 +21,7 @@
         </div>
         <div class="row m-3 justify-content-md-center" id="stickerList">
           <span class="col-2" *ngFor="let item of stickerList">
-            <img [src]="getStickerImage(item)" Observable="Observable.fromEvent(stickerList, 'onpageshow')" class="rounded img-fluid img-sticker" (click)="selectSticker(item)">
+            <img [defaultImage]="defaultImage" [lazyLoad]="getStickerImage(item)" Observable="Observable.fromEvent(stickerList, 'onpageshow')" class="rounded img-fluid img-sticker" (click)="selectSticker(item)">
           </span>
         </div>
 

@@ -11,13 +11,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './page/login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { SendMessageComponent } from './page/send-message/send-message.component';
+import { SendWithStickerComponent } from './page/send-with-sticker/send-with-sticker.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HeaderComponent,
-    SendMessageComponent
+    SendMessageComponent,
+    SendWithStickerComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,34 @@
+<div class="card">
+  <div class="card-header">
+    發送貼圖訊息
+  </div>
+  <div class="card-block">
+    <form [formGroup]="form" (ngSubmit)="sendMessage()">
+      <div class="form-group">
+        <label for="">訊息內容</label>
+        <input type="text" name="message" id="message" class="form-control" placeholder="" aria-describedby="helpId" formControlName="message">
+        <small id="helpId" class="text-muted">必填項目</small>
+      </div>
+
+      <div class="form-group">
+        <label for="">選擇貼圖</label>
+
+        <div class="row m-3">
+          <div class="col text-center">
+            <img [src]="defaultImage" class="rounded float-left">
+          </div>
+          <button type="submit" class="btn btn-primary">送出</button>
+        </div>
+        <div class="row m-3 justify-content-md-center" id="stickerList">
+          <span class="col-2" *ngFor="let item of stickerList">
+            <img [src]="getStickerImage(item)" Observable="Observable.fromEvent(stickerList, 'onpageshow')" class="rounded img-fluid img-sticker" (click)="selectSticker(item)">
+          </span>
+        </div>
+
+        <small id="helpId" class="text-muted">必填項目</small>
+      </div>
+    </form>
+  </div>
+  <div class="card-footer text-muted">
+  </div>
+</div>

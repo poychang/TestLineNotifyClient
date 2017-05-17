@@ -1,3 +1,4 @@
+import { SendWithStickerComponent } from './page/send-with-sticker/send-with-sticker.component';
 import { SendMessageComponent } from './page/send-message/send-message.component';
 import { LoginComponent } from './page/login/login.component';
 import { NgModule } from '@angular/core';
@@ -13,11 +14,11 @@ const routes: Routes = [
     component: SendMessageComponent,
     // canActivate: [CanSendGuardService]
   },
-  // {
-  //   path: 'sendWithSticker',
-  //   component: SendWithStickerComponent,
-  //   canActivate: [CanSendGuardService]
-  // },
+  {
+    path: 'sendWithSticker',
+    component: SendWithStickerComponent
+    // canActivate: [CanSendGuardService]
+  },
   {
     path: '**',
     component: LoginComponent

@@ -1,10 +1,25 @@
+import { LoginComponent } from './page/login/login.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',
-    children: []
+    path: 'login',
+    component: LoginComponent
+  },
+  // {
+  //   path: 'sendMessage',
+  //   component: SendMessageComponent,
+  //   canActivate: [CanSendGuardService]
+  // },
+  // {
+  //   path: 'sendWithSticker',
+  //   component: SendWithStickerComponent,
+  //   canActivate: [CanSendGuardService]
+  // },
+  {
+    path: '**',
+    component: LoginComponent
   }
 ];
 

@@ -1,0 +1,15 @@
+<div class="alert alert-info" role="alert" *ngIf="token">
+  <strong>TOKEN: </strong>{{token}}
+</div>
+
+<div class="card">
+  <div class="card-header">
+    設定個人帳號與 Line Notify 連動
+  </div>
+  <div class="card-block text-center">
+    <img src="./assets/img/icon-linenotify.png" class="img-circle">
+    <button type="button" class="btn btn-lg btn-block btn-outline-success my-3" (click)="login()">點我連動</button>
+  </div>
+  <div class="card-footer text-muted">
+  </div>
+</div>

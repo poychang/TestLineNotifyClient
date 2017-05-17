@@ -1,7 +1,8 @@
-import { Message } from './message.model';
-import { Http } from '@angular/http';
-import { AppConfigService } from './app-config.service';
 import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
+
+import { AppConfigService } from './app-config.service';
+import { Message } from './message.model';
 
 @Injectable()
 export class LineNotifyService {

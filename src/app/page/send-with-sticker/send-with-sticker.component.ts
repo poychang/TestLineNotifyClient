@@ -1,8 +1,9 @@
-import { Sticker } from './../../share/sticker.model';
-import { LineNotifyService } from './../../share/line-notify.service';
-import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
-import { StickerService } from './../../share/sticker.service';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
+
+import { StickerService } from './../../share/sticker.service';
+import { LineNotifyService } from './../../share/line-notify.service';
+import { Sticker } from './../../share/sticker.model';
 
 @Component({
   selector: 'app-send-with-sticker',

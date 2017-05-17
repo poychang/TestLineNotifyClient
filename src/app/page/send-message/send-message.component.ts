@@ -1,6 +1,7 @@
-import { LineNotifyService } from './../../share/line-notify.service';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+
+import { LineNotifyService } from './../../share/line-notify.service';
 
 @Component({
   selector: 'app-send-message',
@@ -14,7 +15,7 @@ export class SendMessageComponent implements OnInit {
     private line: LineNotifyService
   ) {
     this.createForm();
-   }
+  }
 
   ngOnInit() {
   }

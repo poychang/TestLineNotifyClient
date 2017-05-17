@@ -1,7 +1,8 @@
-import { LineNotifyService } from './../../share/line-notify.service';
-import { ActivatedRoute } from '@angular/router';
-import { AppConfigService } from './../../share/app-config.service';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+import { AppConfigService } from './../../share/app-config.service';
+import { LineNotifyService } from './../../share/line-notify.service';
 
 @Component({
   selector: 'app-login',
@@ -11,9 +12,9 @@ import { Component, OnInit } from '@angular/core';
 export class LoginComponent implements OnInit {
 
   constructor(
+    private activatedRoute: ActivatedRoute,
     private config: AppConfigService,
-    private line : LineNotifyService,
-    private activatedRoute: ActivatedRoute
+    private line: LineNotifyService
   ) { }
 
   ngOnInit() {

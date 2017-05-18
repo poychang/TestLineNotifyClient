@@ -14,7 +14,7 @@ export class LineNotifyService {
 
   /** 設定與 Lind Notify 連動 */
   public login() {
-    window.location.assign(this.config.api + '/Authorize');
+    window.location.assign(`${this.config.api}/Authorize`);
   }
 
   /** 傳送文字訊息 */
@@ -22,7 +22,7 @@ export class LineNotifyService {
     let m = new Message();
     m.token = this.config.getToken();
     m.message = message;
-    return this.http.post(this.config.api + '/LineNotify/SendMessage', m);
+    return this.http.post(`${this.config.api}/LineNotify/SendMessage`, m);
   }
 
   /** 傳送官方貼圖 */
@@ -32,6 +32,6 @@ export class LineNotifyService {
     m.message = message;
     m.stickerPackageId = stickerPackageId;
     m.stickerId = stickerId;
-    return this.http.post(this.config.api + '/LineNotify/SendWithSticker', m);
+    return this.http.post(`${this.config.api}/LineNotify/SendWithSticker`, m);
   }
 }

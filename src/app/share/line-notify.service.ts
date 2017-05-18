@@ -20,7 +20,7 @@ export class LineNotifyService {
 
   /** 傳送文字訊息 */
   public sendMessage = (message: string) => {
-    let m = <Message>{
+    const m = <Message>{
       token: this.config.getToken(),
       message: message
     };
@@ -29,7 +29,7 @@ export class LineNotifyService {
 
   /** 傳送官方貼圖 */
   public sendWithSticker = (message: string, stickerPackageId: string, stickerId: string) => {
-    let m = <Message>{
+    const m = <Message>{
       token: this.config.getToken(),
       message: message,
       stickerPackageId: stickerPackageId,

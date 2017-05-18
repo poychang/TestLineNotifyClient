@@ -10,6 +10,7 @@ import { LineNotifyService } from './../../share/line-notify.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  public token: string;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -18,12 +19,11 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    let token: string = this.activatedRoute.snapshot.queryParams['token'];
+    const token: string = this.activatedRoute.snapshot.queryParams['token'];
     this.config.saveToken(token);
     this.token = this.config.getToken();
   }
 
-  public token: string;
 
   public login() {
     this.line.login();

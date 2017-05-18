@@ -3,6 +3,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { environment } from "environments/environment";
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -33,6 +35,7 @@ import { CanSendGuard } from './share/can-send.guard';
     LazyLoadImageModule
   ],
   providers: [
+    { provide: 'apiUrl', useValue: environment.api },
     AppConfigService,
     StickerService,
     LineNotifyService,

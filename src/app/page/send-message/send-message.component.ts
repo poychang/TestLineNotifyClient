@@ -9,6 +9,7 @@ import { LineNotifyService } from './../../share/line-notify.service';
   styleUrls: ['./send-message.component.css']
 })
 export class SendMessageComponent implements OnInit {
+  public form: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -20,7 +21,6 @@ export class SendMessageComponent implements OnInit {
   ngOnInit() {
   }
 
-  public form: FormGroup;
   private createForm() {
     this.form = this.formBuilder.group({
       message: new FormControl('', [Validators.required])
@@ -28,6 +28,6 @@ export class SendMessageComponent implements OnInit {
   }
   public sendMessage() {
     this.line.sendMessage(this.form.controls['message'].value)
-      .subscribe(result => { console.log(result) });
+      .subscribe(result => { console.log(result); });
   }
 }

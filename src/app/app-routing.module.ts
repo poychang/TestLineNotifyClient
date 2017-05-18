@@ -1,4 +1,4 @@
-import { CanSendGuardService } from './share/can-send-guard.service';
+import { CanSendGuard } from './share/can-send.guard';
 import { SendWithStickerComponent } from './page/send-with-sticker/send-with-sticker.component';
 import { SendMessageComponent } from './page/send-message/send-message.component';
 import { LoginComponent } from './page/login/login.component';
@@ -13,12 +13,12 @@ const routes: Routes = [
   {
     path: 'sendMessage',
     component: SendMessageComponent,
-    canActivate: [CanSendGuardService]
+    canActivate: [CanSendGuard]
   },
   {
     path: 'sendWithSticker',
     component: SendWithStickerComponent,
-    canActivate: [CanSendGuardService]
+    canActivate: [CanSendGuard]
   },
   {
     path: '**',

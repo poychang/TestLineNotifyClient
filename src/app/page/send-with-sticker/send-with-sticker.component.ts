@@ -11,6 +11,10 @@ import { Sticker } from './../../share/sticker.model';
   styleUrls: ['./send-with-sticker.component.css']
 })
 export class SendWithStickerComponent implements OnInit {
+  public form: FormGroup;
+  public defaultImage = 'http://placehold.it/100x100';
+  public stickerList: Sticker[];
+  public selectedSticker: Sticker = new Sticker();
 
   constructor(
     private formBuilder: FormBuilder,
@@ -22,9 +26,8 @@ export class SendWithStickerComponent implements OnInit {
 
   ngOnInit() {
     this.stickerService.getStickers()
-      .subscribe((result) => { this.stickerList = result });
+      .subscribe((result) => { this.stickerList = result; });
   }
-  public form: FormGroup;
   private createForm() {
     this.form = this.formBuilder.group({
       message: new FormControl('', [Validators.required]),
@@ -33,19 +36,19 @@ export class SendWithStickerComponent implements OnInit {
     });
   }
 
-  public defaultImage: string = 'http://placehold.it/100x100';
-  public stickerList: Sticker[];
-  public selectedSticker: Sticker = new Sticker();
-  public getStickerImage = (item: Sticker) => { return this.stickerService.getStickerImage(item) };
+  public getStickerImage = (item: Sticker) => { return this.stickerService.getStickerImage(item); };
   public selectSticker = (item: Sticker) => {
     this.defaultImage = this.getStickerImage(item);
     this.selectedSticker = item;
     this.form.controls['stickerPackageId'].setValue(item.stkpkgid);
     this.form.controls['stickerId'].setValue(item.stkid);
-  };
+  }
   public sendMessage() {
-    this.line.sendWithSticker(this.form.controls['message'].value, this.form.controls['stickerPackageId'].value, this.form.controls['stickerId'].value)
-      .subscribe(result => { console.log(result) });
-  };
+    this.line.sendWithSticker(
+      this.form.controls['message'].value,
+      this.form.controls['stickerPackageId'].value,
+      this.form.controls['stickerId'].value
+    ).subscribe(result => { console.log(result); });
+  }
 
 }

@@ -19,8 +19,7 @@ export class StickerService {
   /** 取得貼圖清單 */
   public getStickers(): Observable<Sticker[]> {
     return this.http.get(`${this.config.api}/Stickers`)
-      .map((response) => { return response.json() as Sticker[] })
-      .catch((error) => { return Observable.throw(new Error(error)) });
+      .map((response) => { return response.json() as Sticker[] });
   };
   /** 取得指定貼圖資源路徑 */
   public getStickerImage = (sticker: Sticker): string => {

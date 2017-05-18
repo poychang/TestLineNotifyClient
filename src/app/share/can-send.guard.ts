@@ -4,7 +4,7 @@ import { RouterStateSnapshot, ActivatedRouteSnapshot, CanActivate } from '@angul
 import { AppConfigService } from './app-config.service';
 
 @Injectable()
-export class CanSendGuardService implements CanActivate {
+export class CanSendGuard implements CanActivate {
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     if (this.config.getToken() != undefined || null) {
       console.log('Please~');

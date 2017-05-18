@@ -14,7 +14,7 @@ import { LazyLoadImageModule } from "ng-lazyload-image";
 import { AppConfigService } from './share/app-config.service';
 import { StickerService } from './share/sticker.service';
 import { LineNotifyService } from './share/line-notify.service';
-import { CanSendGuardService } from './share/can-send-guard.service';
+import { CanSendGuard } from './share/can-send.guard';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,7 @@ import { CanSendGuardService } from './share/can-send-guard.service';
     AppConfigService,
     StickerService,
     LineNotifyService,
-    CanSendGuardService
+    CanSendGuard
   ],
   bootstrap: [AppComponent]
 })
